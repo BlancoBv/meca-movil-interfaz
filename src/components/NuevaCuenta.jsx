@@ -1,10 +1,19 @@
-import React from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 
 function NuevaCuenta() {
+  const [tipoCuenta, setTipoCuenta] = useState("usuario");
+  const cambiarCuenta = () => {
+    if (tipoCuenta === "usuario") {
+      setTipoCuenta("administrador");
+    } else {
+      setTipoCuenta("usuario");
+    }
+  };
+
   return (
     <div className="d-flex flex-column mt-3 align-items-center">
-      <h4>Crear nueva cuenta</h4>
+      <h4>Crear nueva cuenta de {tipoCuenta}</h4>
       <form>
         <div className="d-flex flex-column">
           <label>Nombre</label>
@@ -26,11 +35,14 @@ function NuevaCuenta() {
           <label>Fecha de nacimiento</label>
           <input type="date" />
         </div>
-        <button>Iniciar sesion</button>
+        <button>Crear cuenta</button>
       </form>
       <p>
         ¿Ya tienes cuenta?, inicia sesion <Link to="/">aqui.</Link>
       </p>
+      <span role="button" onClick={cambiarCuenta}>
+        Registrar como {tipoCuenta === "usuario" ? "administrador" : "usuario"}
+      </span>
     </div>
   );
 }
