@@ -6,7 +6,7 @@ function Layout() {
   return (
     <Fragment>
       <Header />
-      <div style={{ height: "90vh" }}>
+      <div style={{ minHeight: "90vh" }}>
         <Outlet />
       </div>
     </Fragment>

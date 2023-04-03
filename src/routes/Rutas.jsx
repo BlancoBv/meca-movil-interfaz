@@ -8,6 +8,7 @@ import NuevaCuenta from "../components/NuevaCuenta";
 import Layout from "../GUI/Layout";
 import NotFound from "../GUI/NotFound";
 import RegistroVehiculo from "../components/RegistroVehiculo";
+import Citas from "../components/Citas";
 function Rutas() {
   const rutas = Router([
     {
@@ -22,7 +23,7 @@ function Rutas() {
           children: [
             { index: true, element: <Home /> },
             { path: "registrar-vehiculo", element: <RegistroVehiculo /> },
-            { path: "citas" },
+            { path: "citas", element: <Citas /> },
             { path: "historial" },
           ],
         },
