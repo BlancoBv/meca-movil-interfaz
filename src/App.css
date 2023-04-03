@@ -8,3 +8,20 @@
   background-color: rgba(255, 255, 255, 0.959);
   border-bottom: solid rgb(212, 95, 95) 1px;
 }
+.diasContainer {
+  border: 1px solid grey;
+  width: 100px;
+  height: 100px;
+}
+.diasContainer:hover {
+  background-color: rgb(212, 95, 95);
+  transition: ease 0.5ms;
+}
+.volver {
+  display: flex;
+  align-items: center;
+  color: rgb(212, 95, 95);
+}
+.volver:hover {
+  color: grey;
+}

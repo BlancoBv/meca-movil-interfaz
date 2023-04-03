@@ -4,11 +4,7 @@ function HeaderComponents({ ruta, title }) {
   const navigate = useNavigate();
   return (
     <div className="d-flex align-items-center border-bottom">
-      <div
-        className="d-flex align-items-center"
-        role="button"
-        onClick={() => navigate(ruta)}
-      >
+      <div className="volver" role="button" onClick={() => navigate(ruta)}>
         <i className="fa-solid fa-circle-left" style={{ fontSize: "20pt" }} />{" "}
         Volver
       </div>
