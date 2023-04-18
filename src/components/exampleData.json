@@ -1,0 +1,51 @@
+[
+  {
+    "historial": [
+      {
+        "id": 1,
+        "vehiculo": "Nissan",
+        "servicios": [
+          "cambio de aceite",
+          "revision de clima",
+          "cambio de llantas"
+        ],
+        "completado": true
+      },
+      {
+        "id": 2,
+        "vehiculo": "Chevrolet",
+        "servicios": ["cambio de aceite"],
+        "completado": true
+      },
+      {
+        "id": 3,
+        "vehiculo": "Mitsubishi",
+        "servicios": ["cambio de aceite", "revision de clima"],
+        "completado": false
+      }
+    ],
+    "vehiculos": [
+      {
+        "id": 1,
+        "marca": "Nissan",
+        "modelo": "versa",
+        "numSerie": "t24yu5r439opy",
+        "placa": "2yi54w"
+      },
+      {
+        "id": 2,
+        "marca": "Chevrolet",
+        "modelo": "versa",
+        "numSerie": "124rete43439opy",
+        "placa": "2yi54w"
+      },
+      {
+        "id": 1,
+        "marca": "Mitusubishi",
+        "modelo": "versa",
+        "numSerie": "rfce55943439opy",
+        "placa": "amogus2"
+      }
+    ]
+  }
+]

@@ -14,7 +14,7 @@ function Citas() {
   useEffect(() => {
     const ancho = containerRef.current.offsetWidth / 7;
     setEstilo({ width: `${ancho}px`, height: `${ancho / 1.5}px` });
-  });
+  }, [containerRef.current]);
 
   return (
     <div className="d-flex flex-column p-3">
@@ -57,7 +57,11 @@ function Citas() {
 const Calendario = forwardRef(({ dias, estilo }, ref) => {
   let arrayDias = [];
   for (let i = 0; i < dias; i++) {
-    arrayDias.push(i + 1);
+    arrayDias.push({
+      dia: i + 1,
+      cita: Math.random() > 0.5 ? true : false,
+      msg: "Cita vehiculo",
+    });
   }
 
   return (
@@ -66,7 +70,9 @@ const Calendario = forwardRef(({ dias, estilo }, ref) => {
         arrayDias.map((el) => {
           return (
             <div className="diasContainer" style={estilo} key={el}>
-              {el}
+              {el.dia}
+              {el.cita && <p>{el.msg}</p>}
+              <p>{el.random}</p>
             </div>
           );
         })}

@@ -9,6 +9,7 @@ import Layout from "../GUI/Layout";
 import NotFound from "../GUI/NotFound";
 import RegistroVehiculo from "../components/RegistroVehiculo";
 import Citas from "../components/Citas";
+import Historial from "../components/Historial";
 function Rutas() {
   const rutas = Router([
     {
@@ -24,7 +25,7 @@ function Rutas() {
             { index: true, element: <Home /> },
             { path: "registrar-vehiculo", element: <RegistroVehiculo /> },
             { path: "citas", element: <Citas /> },
-            { path: "historial" },
+            { path: "historial", element: <Historial /> },
           ],
         },
         ,
