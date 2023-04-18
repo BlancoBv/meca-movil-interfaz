@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useRef, useState, forwardRef, useEffect } from "react";
 import HeaderComponents from "./HeaderComponents";
 import meses from "../helpers/meses.json";
 import { useParams } from "react-router-dom";
@@ -7,7 +7,14 @@ function Citas() {
   const yearActual = new Date().getFullYear();
   const [year, setYear] = useState(yearActual);
   const [month, setMonth] = useState(new Date().getMonth());
+  const [estilo, setEstilo] = useState({});
   const diasTotal = new Date(year, month, 0).getDate();
+  const containerRef = useRef();
+
+  useEffect(() => {
+    const ancho = containerRef.current.offsetWidth / 7;
+    setEstilo({ width: `${ancho}px`, height: `${ancho / 1.5}px` });
+  });
 
   return (
     <div className="d-flex flex-column p-3">
@@ -42,27 +49,29 @@ function Citas() {
         </div>
       </div>
 
-      <Calendario dias={diasTotal} />
+      <Calendario dias={diasTotal} ref={containerRef} estilo={estilo} />
     </div>
   );
 }
 
-const Calendario = ({ dias }) => {
+const Calendario = forwardRef(({ dias, estilo }, ref) => {
   let arrayDias = [];
   for (let i = 0; i < dias; i++) {
     arrayDias.push(i + 1);
   }
+
   return (
-    <div className="d-flex flex-wrap mt-3">
-      {arrayDias.map((el) => {
-        return (
-          <div className="diasContainer" key={el}>
-            {el}
-          </div>
-        );
-      })}
+    <div ref={ref} className="d-flex flex-wrap mt-3 ">
+      {estilo.hasOwnProperty("width") &&
+        arrayDias.map((el) => {
+          return (
+            <div className="diasContainer" style={estilo} key={el}>
+              {el}
+            </div>
+          );
+        })}
     </div>
   );
-};
+});
 
 export default Citas;
