@@ -2,12 +2,14 @@ import React, { useRef, useState, forwardRef, useEffect } from "react";
 import HeaderComponents from "./HeaderComponents";
 import meses from "../helpers/meses.json";
 import { useParams } from "react-router-dom";
+import ModalBase from "./modal/ModalBase";
 
 function Citas() {
   const yearActual = new Date().getFullYear();
   const [year, setYear] = useState(yearActual);
   const [month, setMonth] = useState(new Date().getMonth());
   const [estilo, setEstilo] = useState({});
+  const [showModal, setShowModal] = useState(false);
   const diasTotal = new Date(year, month, 0).getDate();
   const containerRef = useRef();
 
@@ -49,12 +51,27 @@ function Citas() {
         </div>
       </div>
 
-      <Calendario dias={diasTotal} ref={containerRef} estilo={estilo} />
+      <Calendario
+        dias={diasTotal}
+        ref={containerRef}
+        estilo={estilo}
+        showModal={() => setShowModal(true)}
+      />
+      <ModalBase
+        show={showModal}
+        close={() => setShowModal(false)}
+        title="Detalles cita"
+      >
+        <div className="d-flex flex-column text-center">
+          <p>Cita con vehiculo Nissan</p>
+          <p>Texto de ejemplo...</p>
+        </div>
+      </ModalBase>
     </div>
   );
 }
 
-const Calendario = forwardRef(({ dias, estilo }, ref) => {
+const Calendario = forwardRef(({ dias, estilo, showModal }, ref) => {
   let arrayDias = [];
   for (let i = 0; i < dias; i++) {
     arrayDias.push({
@@ -69,7 +86,12 @@ const Calendario = forwardRef(({ dias, estilo }, ref) => {
       {estilo.hasOwnProperty("width") &&
         arrayDias.map((el) => {
           return (
-            <div className="diasContainer" style={estilo} key={el}>
+            <div
+              className="diasContainer"
+              style={estilo}
+              key={el}
+              onClick={showModal}
+            >
               {el.dia}
               {el.cita && <p>{el.msg}</p>}
               <p>{el.random}</p>

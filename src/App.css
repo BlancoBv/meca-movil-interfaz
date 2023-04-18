@@ -24,3 +24,15 @@
 .volver:hover {
   color: grey;
 }
+
+.button {
+  background-color: rgb(212, 95, 95);
+  border: none;
+  border-radius: 5px;
+  padding: 5px;
+  color: white;
+}
+.button:hover {
+  background-color: grey;
+  transition: ease 0.5ms;
+}

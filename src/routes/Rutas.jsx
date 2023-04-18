@@ -10,6 +10,9 @@ import NotFound from "../GUI/NotFound";
 import RegistroVehiculo from "../components/RegistroVehiculo";
 import Citas from "../components/Citas";
 import Historial from "../components/Historial";
+import VehiculosTaller from "../components/adminTemp/VehiculosTaller";
+import CitasAdmin from "../components/adminTemp/CitasAdmin";
+import Reportes from "../components/adminTemp/Reportes";
 function Rutas() {
   const rutas = Router([
     {
@@ -28,7 +31,15 @@ function Rutas() {
             { path: "historial", element: <Historial /> },
           ],
         },
-        ,
+        {
+          path: "admin",
+          children: [
+            { index: true, element: <Home /> },
+            { path: "vehiculos", element: <VehiculosTaller /> },
+            { path: "citas", element: <CitasAdmin /> },
+            { path: "reportes", element: <Reportes /> },
+          ],
+        },
       ],
     },
   ]);

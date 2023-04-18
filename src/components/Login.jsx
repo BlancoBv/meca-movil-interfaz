@@ -20,11 +20,14 @@ function Login() {
           <label>Contraseña</label>
           <input type="password" />
         </div>
-        <button type="submit">Iniciar sesion</button>
+        <button type="submit" className="button mt-2">
+          Iniciar sesion
+        </button>
       </form>
       <p>
         O crea una cuenta <Link to="new-account">aqui.</Link>
       </p>
+      <Link to="admin">Ver como admin</Link>
     </div>
   );
 }

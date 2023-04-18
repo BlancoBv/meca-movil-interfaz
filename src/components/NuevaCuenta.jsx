@@ -35,7 +35,7 @@ function NuevaCuenta() {
           <label>Fecha de nacimiento</label>
           <input type="date" />
         </div>
-        <button>Crear cuenta</button>
+        <button className="button mt-2">Crear cuenta</button>
       </form>
       <p>
         ¿Ya tienes cuenta?, inicia sesion <Link to="/">aqui.</Link>

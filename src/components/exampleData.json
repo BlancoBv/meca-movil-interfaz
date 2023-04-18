@@ -30,21 +30,44 @@
         "marca": "Nissan",
         "modelo": "versa",
         "numSerie": "t24yu5r439opy",
-        "placa": "2yi54w"
+        "placa": "2yi54w",
+        "descripcion": "entro en buen estado"
       },
       {
         "id": 2,
         "marca": "Chevrolet",
-        "modelo": "versa",
+        "modelo": "aveo",
         "numSerie": "124rete43439opy",
-        "placa": "2yi54w"
+        "placa": "2yi54w",
+        "descripcion": "entro en buen estado"
       },
       {
-        "id": 1,
+        "id": 3,
         "marca": "Mitusubishi",
         "modelo": "versa",
         "numSerie": "rfce55943439opy",
-        "placa": "amogus2"
+        "placa": "amogus2",
+        "descripcion": "entro en muy mal estado"
+      }
+    ],
+    "citas": [
+      {
+        "id": 1,
+        "fecha": "2023-04-17",
+        "usuario": "tilin",
+        "telefono": 9341526578
+      },
+      {
+        "id": 2,
+        "fecha": "2023-04-17",
+        "usuario": "tilin",
+        "telefono": 9341526578
+      },
+      {
+        "id": 23,
+        "fecha": "2023-04-17",
+        "usuario": "tilin",
+        "telefono": 9341526578
       }
     ]
   }

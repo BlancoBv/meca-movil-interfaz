@@ -33,7 +33,9 @@ function RegistroVehiculo() {
               <label>Número de serie</label>
               <input type="text" />
             </div>
-            <button type="submit">Enviar</button>
+            <button type="submit" className="button mt-2">
+              Registrar
+            </button>
           </form>
         </div>
         <div className="flex-fill text-center">
